@@ -16,8 +16,6 @@ const arrayOfIds = createArray(492)
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max) + 1
 
-// const revealCard = () => {}
-
 let difficulte = 4
 let essaie = []
 let userFound = []
@@ -32,11 +30,6 @@ const isItOver = () => {
 		}
 	}
 }
-
-// Cacher le modal lors du chargement de la page
-// $(".modal-container").hide()
-// $(".modal-container").css('visibility', 'visible');
-
 
 // const createCard = id => `<aside class="card"><img src="assets/images/${id}.png" /></aside>`
 const createCard = id => {

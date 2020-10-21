@@ -5,28 +5,35 @@
 * Browsers: last 4 version
 */
 
-
 html {
 	--card-height: 200px;
 	--card-width: 200px;
 	--card-padding: 12px;
+	--color-primary: #ff1f1f;
+	--color-secondary: #fff;
 }
 
 body {
 	margin: 0;
-	background-color: #3a7eff;
+	/* background-color: #3a7eff; */
+	background-color: var(--color-primary);
 	color: white;
 	font-family: 'Indie Flower', cursive;
 }
 
 main {
-	/* min-height: 100vh; */
 	max-width: 1200px;
 	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	/* justify-content: center; */
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+					flex-direction: column;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
 }
 
 h1 {
@@ -47,25 +54,24 @@ p {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	justify-content: center;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+			flex-wrap: wrap;
 }
 
 .card {
-	/* background-color: #fff; */
 	-webkit-transition: .6s;
 	-o-transition: .6s;
 	transition: .6s;
 	position: relative;
 	margin: 16px;
 	padding: var(--card-padding);
-	/* border: 1px solid rgba(146, 146, 146, .5); */
 	border: 1px solid rgba(255, 255, 255, .5);
 	border-radius: 8px;
 	height: var(--card-height);
 	width: var(--card-width);
 	-webkit-transform-style: preserve-3d;
-	        transform-style: preserve-3d;
+					transform-style: preserve-3d;
 }
 
 .card > div {
@@ -81,20 +87,19 @@ p {
 
 .reveal {
 	-webkit-transform: rotateY(180deg);
-	        transform: rotateY(180deg);
+					transform: rotateY(180deg);
 }
 
 .pokemon {
 	z-index: 5;
 	position: absolute;
 	-webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+	backface-visibility: hidden;
 	top: var(--card-padding);
 	height: var(--card-height);
 	width: var(--card-width);
 	-webkit-transform: rotateY(180deg);
-	        transform: rotateY(180deg);
-	/* background-color: rgb(110, 173, 255); */
+					transform: rotateY(180deg);
 	background-color: rgb(255, 255, 255);
 }
 
@@ -109,24 +114,34 @@ button {
 	cursor: pointer;
 }
 
+button#play {
+	background-color: #fff;
+	color: var(--color-primary);
+}
+
 #play:active {
 	background-color: #fd9800dd;
 }
 
 /* Modal */
 .modal-container {
-	/* display: hidden; */
 	visibility: hidden;
 	z-index: 2;
-	position: absolute;
+	position: fixed;
 	background-color: rgba(0, 0, 0, 0.8);
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+			-ms-flex-pack: center;
+					justify-content: center;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
 }
 
 .modal-container > .modal {
@@ -139,4 +154,11 @@ button {
 
 .modal p {
 	text-align: center;
+}
+
+@media screen and (max-width: 525px) {
+	html {
+		--card-height: 125px;
+		--card-width: 125px;
+	}
 }
