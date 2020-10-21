@@ -160,5 +160,20 @@ button#play {
 	html {
 		--card-height: 125px;
 		--card-width: 125px;
+		--card-padding: 10px;
+	}
+	.card {
+		margin: 8px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	html {
+		--card-height: 100px;
+		--card-width: 100px;
+		--card-padding: 8px;
+	}
+	.card {
+		margin: 4px;
 	}
 }
